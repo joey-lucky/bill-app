@@ -1,0 +1,10 @@
+# idea开发工具
+*.iml
+/.idea
+
+# node
+/dist
+/build
+/node_modules
+*.log
+/.run
