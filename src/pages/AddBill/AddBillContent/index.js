@@ -69,10 +69,14 @@ export default class AddBillContent extends React.Component {
     _appState = new AppState();
 
     changeValue = (value) => {
-        if (!value.dateTime) {
-            value.dateTime = new Date();
-        }
-        this._appState.value = value;
+        let oldValue = this.props.form.getFieldsValue();
+        this.props.form.resetFields();
+        let mergeValue = {
+            ...oldValue,
+            ...value,
+            money: ""
+        };
+        this.props.form.setFieldsValue(mergeValue);
     };
 
     onSaveAgainClick = (event) => {

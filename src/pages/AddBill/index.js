@@ -34,7 +34,8 @@ export default class AddBill extends React.Component {
     @action
     onTemplateItemClick = (item, index) => {
         this._billEditRef.changeValue(item);
-        this._appState.billTypeTypeName = item.billTypeTypeName;
+        this._appState.billTypeTypeName = item.billTypeValue;
+
     };
 
     onTopItemClick = (item, index) => {
