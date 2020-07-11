@@ -15,7 +15,7 @@ export default class DayItem extends React.Component {
             cardName: PropTypes.string.isRequired,
             cardUserName: PropTypes.string.isRequired,
             billTypeName: PropTypes.string.isRequired,
-            billTypeTypeName: PropTypes.string.isRequired,
+            billTypeTypeValue: PropTypes.string.isRequired,
         }),
         showDate: PropTypes.bool,
         onClick: PropTypes.func.isRequired,
@@ -53,7 +53,7 @@ export default class DayItem extends React.Component {
     render() {
         let {day, week, time, money} = this.state;
         let {showDate,data} =  this.props;
-        let {billDesc, cardName, billTypeName,cardUserName, billTypeTypeName} = data;
+        let {billDesc, cardName, billTypeName,cardUserName, billTypeTypeValue} = data;
         return (
             <Flex
                 style={styles.container}
@@ -102,7 +102,7 @@ export default class DayItem extends React.Component {
                         </Flex>
                     </Flex>
                     <div
-                        style={{...styles.money, color: colors.getMoneyColor(billTypeTypeName)}}
+                        style={{...styles.money, color: colors.getMoneyColor(billTypeTypeValue)}}
                     >
                         {money}
                     </div>
