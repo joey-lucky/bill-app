@@ -39,7 +39,7 @@ class AppState {
             this.activityIndicatorState.animating = true;
             let params = {
                 ...this.params,
-                pageInfo: JSON.stringify(this.pageInfo)
+                ...this.pageInfo,
             };
             let d = await billAPI.index(params);
             let data = d.data || [];
